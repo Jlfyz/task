@@ -12,7 +12,6 @@ def verbing(verb_string):
 
 
 string = input('Hello your word here ')
-
 print(verbing(string))
 
 
@@ -55,14 +54,10 @@ def front_back(first_word, second_word):
                                      second_part_of_second_word)
     else:
         print('Wrong try again!')
-        return front_back(input('First word here: '),
-                          input('Second word here: '))
 
 
 a = input('First word here: ')
-
 b = input('Second word here: ')
-
 print(front_back(a, b))
 
 

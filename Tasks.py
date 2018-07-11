@@ -13,19 +13,17 @@ def donuts(count):
 
 
 counter = input('Enter a num of donuts ')
-
 print(donuts(counter))
 
 
-def both_ends(our_string):
-    if len(our_string) < 2:
+def both_ends(my_string):
+    if len(my_string) < 2:
         return ''
     else:
-        return f'{our_string[:2]}{our_string[len(our_string) - 2:]}'
+        return f'{my_string[:2]}{my_string[len(my_string) - 2:]}'
 
 
 string = input("Input string ")
-
 print(both_ends(string))
 
 
@@ -35,38 +33,36 @@ def fix_start(my_string):
 
 
 s = input('Enter a word ')
-
 print(fix_start(s))
 
 
-def mix_up( first_word, second_word):
+def mix_up(first_word, second_word):
     if len(first_word) > 2 and len(second_word) > 2:
         return f'{second_word[:2]}{first_word[2:]} {first_word[:2]}{second_word[2:]}'
     else:
         print('It\'s wrong, because you used word with just 2 characters or less')
 
-        return mix_up(input('first word '),
-                      input('second word '))
-
 
 a = input('first word ')
-
 b = input('second word ')
-
 print(mix_up(a, b))
 
 
-def del_all_aeiou(st):
+def del_all_aeiou(my_string):
     pattern = r"[aeiou]"
-    if re.search(pattern, st):
-        st = st.replace('a', '')
-        st = st.replace('e', '')
-        st = st.replace('i', '')
-        st = st.replace('o', '')
-        st = st.replace('u', '')
-    return st
+    if re.search(pattern, my_string):
+        my_string = my_string.replace('a', '')
+        my_string = my_string.replace('e', '')
+        my_string = my_string.replace('i', '')
+        my_string = my_string.replace('o', '')
+        my_string = my_string.replace('u', '')
+    return my_string
 
 
 string = input('Some string ')
 
 print(del_all_aeiou(string))
+
+
+if __name__ == '__main__':
+    print('Program started')
