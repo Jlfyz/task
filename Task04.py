@@ -5,10 +5,10 @@ def mix_up(first_word, second_word):
 
 if __name__ == '__main__':
     while True:
-        a = input('first word ')
-        b = input('second word ')
-        if len(a) > 2 and len(b) > 2:
-            print(mix_up(a, b))
+        first_word = input('first word ')
+        second_word = input('second word ')
+        if len(first_word) > 2 and len(second_word) > 2:
+            print(mix_up(first_word, second_word))
             break
         else:
             print('It\'s wrong, because you used word with just 2 characters or less')
