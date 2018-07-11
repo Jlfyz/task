@@ -3,7 +3,7 @@ def mix_up(first_word, second_word):
                                   first_word[:2], second_word[2:])
 
 
-if __name__ == '__main__':
+def main():
     while True:
         first_word = input('first word ')
         second_word = input('second word ')
@@ -12,3 +12,8 @@ if __name__ == '__main__':
             break
         else:
             print('It\'s wrong, because you used word with just 2 characters or less')
+
+
+if __name__ == '__main__':
+    main()
+

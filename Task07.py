@@ -13,6 +13,10 @@ def not_bad(working_string):
         return 'In string \'{0}\' is not find not or bad'.format(working_string)
 
 
-if __name__ == '__main__':
+def main():
     my_string = input('Your string here ')
     print(not_bad(my_string))
+
+
+if __name__ == '__main__':
+    main()

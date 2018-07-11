@@ -12,6 +12,10 @@ def del_all_vowels_letters(my_string):
     return my_string
 
 
-if __name__ == 'main':
+def main():
     string = input('Some string ')
     print(del_all_vowels_letters(string))
+
+
+if __name__ == 'main':
+    main()

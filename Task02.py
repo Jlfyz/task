@@ -6,6 +6,10 @@ def both_ends(my_string):
                                my_string[len(my_string) - 2:])
 
 
-if __name__ == '__main__':
+def main():
     string = input("Input string ")
     print(both_ends(string))
+
+
+if __name__ == '__main__':
+    main()

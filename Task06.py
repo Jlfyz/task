@@ -11,6 +11,10 @@ def verbing(verb_string):
         return verb_string
 
 
-if __name__ == '__main__':
+def main():
     string = input('Hello your word here ')
     print(verbing(string))
+
+
+if __name__ == '__main__':
+    main()

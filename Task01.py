@@ -5,7 +5,7 @@ def donuts(count):
         return 'Number of donuts: {0}'.format(count)
 
 
-if __name__ == '__main__':
+def main():
     while True:
         counter = input('Enter a num of donuts ')
         if counter.isnumeric():
@@ -13,3 +13,7 @@ if __name__ == '__main__':
             break
         else:
             print('Incorrect use just integer nums')
+
+
+if __name__ == '__main__':
+    main()

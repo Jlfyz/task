@@ -17,12 +17,16 @@ def front_back(first_word, second_word):
                                  second_part_of_second_word)
 
 
-if __name__ == '__main__':
+def main():
     while True:
-        a = input('First word here: ')
-        b = input('Second word here: ')
-        if len(a) >= 2 and len(b) >= 2:
-            print(front_back(a, b))
+        first_word = input('First word here: ')
+        second_word = input('Second word here: ')
+        if len(first_word) >= 2 and len(second_word) >= 2:
+            print(front_back(first_word, second_word))
             break
         else:
             print('Wrong try again!')
+
+
+if __name__ == '__main__':
+    main()
