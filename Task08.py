@@ -1,20 +1,19 @@
 def front_back(first_word, second_word):
-    if len(first_word) % 2 != 0:
-        first_part_of_first_word = first_word[:int(len(first_word) / 2) + 1]
-        second_part_of_first_word = first_word[int(len(first_word) / 2) + 1:]
-    elif len(first_word) % 2 == 0:
-        first_part_of_first_word = first_word[:int(len(first_word) / 2)]
-        second_part_of_first_word = first_word[int(len(first_word) / 2):]
-    if len(second_word) % 2 != 0:
-        first_part_of_second_word = second_word[:int(len(second_word) / 2) + 1]
-        second_part_of_second_word = second_word[int(len(second_word) / 2) + 1:]
-    elif len(second_word) % 2 == 0:
-        first_part_of_second_word = second_word[:int(len(second_word) / 2)]
-        second_part_of_second_word = second_word[int(len(second_word) / 2):]
-    return '{0}{1}{2}{3}'.format(first_part_of_first_word,
-                                 first_part_of_second_word,
-                                 second_part_of_first_word,
-                                 second_part_of_second_word)
+    first_word_len = len(first_word)
+    second_word_len = len(second_word)
+    if first_word_len % 2 == 0:
+        first_word_index = first_word_len // 2
+    else:
+        first_word_index = (first_word_len // 2) + 1
+    if second_word_len % 2 == 0:
+        second_word_index = second_word_len // 2
+    else:
+        second_word_index = (second_word_len // 2) + 1
+    first_word_front = first_word[0:first_word_index]
+    first_word_back = first_word[first_word_index:]
+    second_word_front = second_word[0:second_word_index]
+    second_word_back = second_word[second_word_index:]
+    return first_word_front + second_word_front + first_word_back + second_word_back
 
 
 def main():

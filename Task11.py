@@ -1,6 +1,9 @@
+def last(t):
+    return t[-1]
+
+
 def sort_last(tuples):
-    tuples.sort(key=lambda my_tuple: my_tuple[-1])
-    return tuples
+    return sorted(tuples, key=last)
 
 
 def main():
