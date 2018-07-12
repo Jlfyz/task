@@ -8,7 +8,7 @@ def match_ends(words):
 
 def main():
     words = []
-    count = int(input('Counter  of strings '))
+    count = int(input('Count of strings '))
     while count >= 1:
         count -= 1
         words.append(input('Your word here '))
