@@ -13,7 +13,7 @@ def main():
     words = []
     x_words = []
     while True:
-        count = input('Counter  of strings ')
+        count = input('Count of strings ')
         if count.isdecimal():
             count = int(count)
             break
