@@ -63,7 +63,8 @@ def print_mimic(mimic_dict, word):
     """Given mimic dict and start word, prints 200 random words."""
     string_to_output = word
     for i in range(200):
-        string_to_output = string_to_output + ' ' + random.choice(mimic_dict[word])
+        word = random.choice(mimic_dict[word])
+        string_to_output = string_to_output + ' ' + word
     print(string_to_output)
 # Provided main(), calls mimic_dict() and mimic()
 

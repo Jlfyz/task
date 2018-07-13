@@ -36,12 +36,12 @@ def words_dict(filename):
     with open(filename, 'r') as f:
         for line in f:
             words = line.split()
-        for word in words:
-            word = word.lower().strip(string.punctuation)
-            if word not in words_count:
-                words_count[word] = 1
-            else:
-                words_count[word] = words_count[word] + 1
+            for word in words:
+                word = word.lower().strip(string.punctuation)
+                if word not in words_count:
+                    words_count[word] = 1
+                else:
+                    words_count[word] = words_count[word] + 1
     return words_count
 
 
