@@ -33,15 +33,15 @@ import string
 
 def words_dict(filename):
     words_count = {}
-    input_file = open(filename, 'r')
-    words = input_file.read().split()
-    for word in words:
-        word = word.lower().strip(string.punctuation)
-        if word not in words_count:
-            words_count[word] = 1
-        else:
-            words_count[word] += 1
-    input_file.close()
+    with open(filename, 'r') as f:
+        for line in f:
+            words = line.split()
+        for word in words:
+            word = word.lower().strip(string.punctuation)
+            if word not in words_count:
+                words_count[word] = 1
+            else:
+                words_count[word] = words_count[word] + 1
     return words_count
 
 
@@ -90,5 +90,4 @@ def main():
 
 
 if __name__ == '__main__':
-    print()
     main()
