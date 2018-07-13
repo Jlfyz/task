@@ -1,0 +1,80 @@
+"""
+Read in the file specified on the command line.
+Do a simple split() on whitespace to obtain all the words in the file.
+Rather than read the file line by line, it's easier to read
+it into one giant string and split it once.
+
+Build a "mimic" dict that maps each word that appears in the file
+to a list of all the words that immediately follow that word in the file.
+The list of words can be be in any order and should include
+duplicates. So for example the key "and" might have the list
+["then", "best", "then", "after", ...] listing
+all the words which came after "and" in the text.
+We'll say that the empty string is what comes before
+the first word in the file.
+
+With the mimic dict, it's fairly easy to emit random
+text that mimics the original. Print a word, then look
+up what words might come next and pick one at random as
+the next work.
+Use the empty string as the first word to prime things.
+If we ever get stuck with a word that is not in the dict,
+go back to the empty string to keep things moving.
+
+Note: the standard python module 'random' includes a
+random.choice(list) method which picks a random element
+from a non-empty list.
+
+For fun, feed your program to itself as input.
+Could work on getting it to put in linebreaks around 70
+columns, so the output looks better.
+
+"""
+
+
+import random
+import sys
+import string
+
+
+def mimic_dict(filename):
+    """Returns mimic dict mapping each word to list of words which follow it."""
+    mimic_words = {}
+    with open(filename, 'r') as f:
+        all_read = f.read()
+        words = all_read.split()
+        i = 0
+        for word in words:
+            if word == words[i]:
+                word = word.lower().strip(string.punctuation)
+            if word not in mimic_words:
+                i = i + 1
+                mimic_words[word] = []
+                mimic_words[word].append(words[i].lower().strip(string.punctuation))
+            elif len(words) == i + 1:
+                break
+            else:
+                i = i + 1
+                mimic_words[word].append(words[i].lower().strip(string.punctuation))
+    return mimic_words
+
+
+def print_mimic(mimic_dict, word):
+    """Given mimic dict and start word, prints 200 random words."""
+    string_to_output = word
+    for i in range(200):
+        string_to_output = string_to_output + ' ' + random.choice(mimic_dict[word])
+    print(string_to_output)
+# Provided main(), calls mimic_dict() and mimic()
+
+
+def main():
+    if len(sys.argv) != 2:
+        print('usage: ./mimic.py file-to-read')
+        sys.exit(1)
+    dictionary = mimic_dict(sys.argv[1])
+    print_mimic(dictionary, 'the')
+
+
+if __name__ == '__main__':
+    main()
