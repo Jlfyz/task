@@ -1,0 +1,17 @@
+/Jlfyz
+/Jlfyz/FirstAttempt
+/Jlfyz/task
+/Jlfyz?tab=followers
+/Jlfyz?tab=following
+/Jlfyz?tab=repositories
+/Jlfyz?tab=stars
+/business
+/contact/report-abuse?report=Jlfyz+%28user%29
+/explore
+/features
+/join?source=header
+/join?source=prompt-users-profile
+/login?return_to=%2FJlfyz%3Ftab%3Drepositories
+/login?return_to=%2FJlfyz%3Ftab%3Drepositories
+/marketplace
+/pricing
