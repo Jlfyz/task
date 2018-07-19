@@ -44,24 +44,31 @@ def main():
     flag = input('Input key(1,2) 1 - give username and my program gives you list of repositories '
                  '2 - give url of your repository and my program logs README.MD without HTML tags ')
     if flag == '1':
-        try:
-            username = input('Your username from github ')
-            parser = MyHTMLParser("https://github.com/{0}".format(username))# ?tab=repositories
-            print(parser.print_to_console_just_repositories(username))
-            print(parser.print_to_console())
-        except Exception as exc:
-            print(str(exc))
+        while True:
+            try:
+                username = input('Your username from github ')
+                parser = MyHTMLParser("https://github.com/{0}".format(username))# ?tab=repositories
+                print(parser.print_to_console_just_repositories(username))
+                break
+            except Exception as exc:
+                print(str(exc))
+                continue
     elif flag == '2':
-        username = input('Your Url (username/your repositorie/branch) ')
-        url = 'https://raw.githubusercontent.com/'+username+'/README.md'
-        matching_URL = re.match(r'(?:https?:\/\/)?(?:[\w\.]+)\.(?:[a-z]{2,6}\.?)(?:\/[\w\.]*)*\/?', url)
-        if matching_URL is None:
-            print('Incorrect URL')
-        try:
-            parser = MyHTMLParser(url)
-            print(parser.print_readmemd())
-        except Exception as e:
-            print(str(e))
+        while True:
+            try:
+                username = input('Your Url (username/your repositorie/branch) ')
+                url = 'https://raw.githubusercontent.com/' + username + '/README.md'
+                matching_URL = re.match(r'(?:https?:\/\/)?(?:[\w\.]+)\.(?:[a-z]{2,6}\.?)(?:\/[\w\.]*)*\/?', url)
+                if matching_URL is None:
+                    print('Incorrect URL')
+                    continue
+                else:
+                    parser = MyHTMLParser(url)
+                    print(parser.print_readmemd())
+                    break
+            except Exception as e:
+                print(str(e))
+                continue
     else:
         print('wrong key')
 
